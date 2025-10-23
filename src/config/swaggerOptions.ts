@@ -4,10 +4,10 @@ const swaggerOptions: swaggerJsdoc.Options = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "Task Management API Documentation",
+            title: "Content Moderation API - Public Documentation",
             version: "1.0.0",
             description:
-                "This is the API documentation for the Task Management application.",
+                "This is the API documentation for the Content Management APIs.",
         },
         servers: [
             {
@@ -15,22 +15,8 @@ const swaggerOptions: swaggerJsdoc.Options = {
                 description: "Local server",
             },
         ],
-        components: {
-            securitySchemes: {
-                bearerAuth: {
-                    type: "http",
-                    scheme: "bearer",
-                    bearerFormat: "JWT",
-                },
-            },
-        },
-        security: [
-            {
-                bearerAuth: [],
-            },
-        ],
     },
-    apis: ["./src/api/v1/routes/*.ts", "./src/api/v1/validations/*.ts"], // Path to the API docs and schemas
+    apis: ["./src/api/v1/routes/moderationRoutes.ts"], // Path to the API docs and schemas
 };
 
 // Generate the Swagger spec
